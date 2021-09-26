@@ -194,7 +194,7 @@ class Fun(Cog):
     async def meme(self, ctx):
         """Get a random meme. The stuff of life."""
         r = await self.bot.session.get("https://www.reddit.com/r/funny/top.json?sort=top&t=day&limit=500")
-        r = await r.json(content_type='text/html')
+        r = await r.json(content_type='application/json')
         r = box.Box(r)
         data = choice(r.data.children).data
         img = data.url
