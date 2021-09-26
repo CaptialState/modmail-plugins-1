@@ -4,6 +4,7 @@ from random import randint,choice
 import discord
 from discord.ext import commands
 from dadjokes import Dadjoke
+from urllib.request import urlopen
 from core import checks
 import box
 import json
