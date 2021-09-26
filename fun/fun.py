@@ -200,7 +200,7 @@ class Fun(Cog):
         img = data_json["url"]
         title = data_json["title"]
         upvotes = data_json["ups"]
-        em = discord.Embed(color=ctx.author.color, title=title)
+        em = discord.Embed(color=0x2332e4, title=title)
         em.set_image(url=img)
         em.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
         em.set_footer(text=f"👍{upvotes}")
