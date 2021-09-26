@@ -193,7 +193,7 @@ class Fun(Cog):
     @commands.command()
     async def meme(self, ctx):
         """Get a random meme. The stuff of life."""
-        r = await self.bot.session.get("https://www.reddit.com/r/linuxmemes/top.json?sort=top&t=day&limit=500")
+        r = await self.bot.session.get("https://www.reddit.com/r/funny/top.json?sort=top&t=day&limit=500")
         r = await r.json()
         r = box.Box(r)
         data = choice(r.data.children).data
@@ -278,7 +278,6 @@ class Fun(Cog):
                 text_list[i]=text_list[i].upper()
         message ="".join(text_list) #convert list back to string(message) to print it as a word
         await ctx.send(message)
-        await ctx.message.delete()
 
       
 def setup(bot):
