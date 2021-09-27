@@ -173,17 +173,8 @@ class Fun(Cog):
     async def say(self,ctx,* ,message):
         """Make the bot say something"""
         msg = escape(message,mass_mentions=True)
-        await ctx.send(msg)
-    
-    @commands.command()
-    async def sayd(self,ctx,* ,message):
-        """Same as say command, except it deletes your message."""
-        msg = escape(message,mass_mentions=True)
-        try:
-            await ctx.message.delete()
-        except discord.errors.Forbidden:
-            await ctx.send("Not enough permissions to delete messages.", delete_after=2)
-        await ctx.send(msg)
+        pingfix = msg.replace("@everyone", "@.everyone").replace("@here", "@.here").replace("<@&581197130983800852>", "@.TheSonicMaster").replace("<@&581196949383020584>", "@.Staff").replace("<@&768749656388796436>", "@.Bot Developer").replace("<@&869259187719393320>", "@.Graphic Designer").replace("<@&852675563038179368>", "@.Server Booster").replace("<@&637739972174151689>", "@.VIP").replace("<@&631154626993061902>", "@.MC Map Contributor").replace("<@&819284703987236906>", "@.Super Secret").replace("<@&757188660742455296>", "@.Mew").replace("<@&837010087830618162>", "@.Chad").replace("<@&639473367316955171>", "@.Secret").replace("<@&639546711387144195>", "@.oof").replace("<@&592036135774060551>", "@.Canary").replace("<@&627463051712659494>", "@.Nostalgic").replace("<@&690902448478617631>", "@.Artist").replace("<@&618879701326233600>", "@.Gamer").replace("<@&589110560344375297>", "@.Hacker").replace("<@&639415893113307138>", "@.Musician").replace("<@&798870960308486156>", "@.Photographer").replace("<@&591521552453861386>", "@.human").replace("<@&581196486533054504>", "@.Member")
+        await ctx.send(pingfix)
         
     @commands.command()
     async def reverse(self, ctx, *, text):
@@ -276,7 +267,8 @@ class Fun(Cog):
             else:
                 text_list[i]=text_list[i].upper()
         message ="".join(text_list) #convert list back to string(message) to print it as a word
-        await ctx.send(message)
+        pingfix = message.replace("@everyone", "@.everyone").replace("@here", "@.here").replace("<@&581197130983800852>", "@.TheSonicMaster").replace("<@&581196949383020584>", "@.Staff").replace("<@&768749656388796436>", "@.Bot Developer").replace("<@&869259187719393320>", "@.Graphic Designer").replace("<@&852675563038179368>", "@.Server Booster").replace("<@&637739972174151689>", "@.VIP").replace("<@&631154626993061902>", "@.MC Map Contributor").replace("<@&819284703987236906>", "@.Super Secret").replace("<@&757188660742455296>", "@.Mew").replace("<@&837010087830618162>", "@.Chad").replace("<@&639473367316955171>", "@.Secret").replace("<@&639546711387144195>", "@.oof").replace("<@&592036135774060551>", "@.Canary").replace("<@&627463051712659494>", "@.Nostalgic").replace("<@&690902448478617631>", "@.Artist").replace("<@&618879701326233600>", "@.Gamer").replace("<@&589110560344375297>", "@.Hacker").replace("<@&639415893113307138>", "@.Musician").replace("<@&798870960308486156>", "@.Photographer").replace("<@&591521552453861386>", "@.human").replace("<@&581196486533054504>", "@.Member")
+        await ctx.send(pingfix)
 
       
 def setup(bot):
